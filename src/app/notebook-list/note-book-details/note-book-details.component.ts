@@ -17,16 +17,21 @@ export class NoteBookDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    const getExistData = JSON.parse(localStorage.getItem('pageDetails'));
+    const getExistData = JSON.parse(sessionStorage.getItem('pageDetails'));
     if (getExistData && getExistData.length > 0) {
       this.pageDetails = getExistData;
     }
   }
   onNoteChange(event) {
     this.pageDetails[this.currentPage].note = event;
-    localStorage.setItem('pageDetails', JSON.stringify(this.pageDetails));
+    sessionStorage.setItem('pageDetails', JSON.stringify(this.pageDetails));
   }
-  onNextPage(event) {
-    this.currentPage++;
+  onChangePage(event) {
+    if (event === 'prev' && this.currentPage > 0) {
+      this.currentPage = this.currentPage - 1;
+    }
+    if (event === 'next' && this.currentPage < 3) {
+      this.currentPage = this.currentPage + 1;
+    }
   }
 }

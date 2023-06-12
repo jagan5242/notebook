@@ -3,12 +3,10 @@
 }
 
 textarea {
-  margin: 0 auto;
   resize: none;
-  width: 500px;
-  min-height: 150px;
   padding: 10px;
   border-radius: 5px;
+  height: 65vh;
   border: 1px solid rgba(141, 141, 141, 0.493);
   color: rgb(85, 84, 84);
   font-size: 16px;
@@ -25,20 +23,43 @@ textarea::placeholder {
 
 button {
   padding: 10px;
-  width: 100px;
-  position: relative;
-  left: 75%;
   border-radius: 5px;
   outline: none;
   border: none;
-  background-color: cadetblue;
+  background-color: green;
   color: white;
   font-weight: 600;
   font-size: 18px;
+  cursor: pointer;
+}
+.btnDisable {
+  pointer-events: none;
+  background-color: gray;
 }
 
 .wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.buttonDiv {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-left: auto;
+}
+.container {
+  margin: 2rem;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.flex {
+  display: flex;
+}
+.headerComp {
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }

@@ -1,13 +1,33 @@
-<h1>Page No : {{ currentIndex + 1 }}</h1>
+<div class="container">
+  <div class="headerComp">
+    <h1>Notebook App</h1>
+    <label class="ml-auto">Page No : {{ currentIndex + 1 }}</label>
+  </div>
 
-<div class="wrapper">
-  <textarea
-    [(ngModel)]="noteValue"
-    (ngModelChange)="onNoteChange($event)"
-    placeholder="add a note"
-  ></textarea>
-  <br />
-  <button (click)="next()">Next Page</button>
-  <!-- <br />
+  <div class="wrapper">
+    <textarea
+      [(ngModel)]="noteValue"
+      (ngModelChange)="onNoteChange($event)"
+      placeholder="add a note"
+    ></textarea>
+    <br />
+    <div class="buttonDiv">
+      <button
+        (click)="onPageChange.emit('prev')"
+        style="margin-right:1rem"
+        [disabled]="currentIndex === 0"
+        [ngClass]="{
+          btnDisable: currentIndex === 0
+        }"
+      >
+        Prev Page
+      </button>
+      <button *ngIf="currentIndex < 3" (click)="onPageChange.emit('next')">
+        Next Page
+      </button>
+    </div>
+
+    <!-- <br />
   <button (click)="clear()">Remove</button> -->
+  </div>
 </div>

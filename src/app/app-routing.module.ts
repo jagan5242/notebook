@@ -6,6 +6,7 @@ import { NoteBookDetailsComponent } from './notebook-list/note-book-details/note
 const routes: Routes = [
   { path: 'list', component: NotesListComponent },
   { path: 'details', component: NoteBookDetailsComponent },
+  { path: '**', redirectTo: 'details', pathMatch: 'full' },
 ];
 
 @NgModule({

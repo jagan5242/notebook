@@ -18,13 +18,4 @@ export class NoteEditComponent implements OnInit {
     this.emitNoteChange.emit(event);
   }
 
-  next() {
-    this.onPageChange.emit();
-    //localStorage.setItem('textareaValue', this.textareaValue);
-  }
-
-  clear() {
-    //localStorage.removeItem('textareaValue')
-    //this.textareaValue = "";
-  }
 }
