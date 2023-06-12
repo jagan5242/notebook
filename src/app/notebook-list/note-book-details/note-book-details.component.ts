@@ -6,9 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./note-book-details.component.css'],
 })
 export class NoteBookDetailsComponent implements OnInit {
-  constructor() {}
+  pageDetails: any[] = [];
+  currentPage = 0;
 
-  ngOnInit() {}
+  constructor() {
+    this.pageDetails = [];
+    for (let i = 0; i < 5; i++) {
+      this.pageDetails.push({ note: '' });
+    }
+  }
 
-  
+  ngOnInit() {
+    const getExistData = JSON.parse(localStorage.getItem('pageDetails'));
+    if (getExistData && getExistData.length > 0) {
+      this.pageDetails = getExistData;
+    }
+  }
+  onNoteChange(event) {
+    this.pageDetails[this.currentPage].note = event;
+    localStorage.setItem('pageDetails', JSON.stringify(this.pageDetails));
+  }
+  onNextPage(event) {
+    this.currentPage++;
+  }
 }

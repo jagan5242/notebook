@@ -1,7 +1,13 @@
+<h1>Page No : {{ currentIndex + 1 }}</h1>
+
 <div class="wrapper">
-  <textarea [(ngModel)]="textareaValue" placeholder="add a note"></textarea>
+  <textarea
+    [(ngModel)]="noteValue"
+    (ngModelChange)="onNoteChange($event)"
+    placeholder="add a note"
+  ></textarea>
   <br />
-  <button (click)="save()">Next</button>
+  <button (click)="next()">Next Page</button>
   <!-- <br />
   <button (click)="clear()">Remove</button> -->
 </div>
