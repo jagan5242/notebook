@@ -30,7 +30,7 @@ export class NoteBookDetailsComponent implements OnInit {
     if (event === 'prev' && this.currentPage > 0) {
       this.currentPage = this.currentPage - 1;
     }
-    if (event === 'next' && this.currentPage < 3) {
+    if (event === 'next' && this.currentPage < 4) {
       this.currentPage = this.currentPage + 1;
     }
   }
