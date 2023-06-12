@@ -1,0 +1,12 @@
+<div class="parent">
+  <h1>Notebook List</h1>
+  <button class="ml-auto">Create New</button>
+</div>
+
+<div *ngIf="notebookList && notebookList.length > 0">
+  <ul>
+    <li *ngFor="let notebook of notebookList">
+      <label>{{ notebook.name }}</label>
+    </li>
+  </ul>
+</div>
